@@ -49,7 +49,9 @@ Then open your browser and go to:
 <img width="1919" height="1017" alt="Screenshot 2025-07-27 002437" src="https://github.com/user-attachments/assets/0e187d12-0113-46fd-8bfa-97f68f8f61c1" />
 
 <img width="1906" height="1009" alt="Screenshot 2025-07-27 002446" src="https://github.com/user-attachments/assets/31b91b5e-98cf-4609-a912-2e8112457230" />
-# In vercel
+
+### OR open your browser and go to: 👉 https://chatbot-flow.vercel.app/
+
 <img width="1895" height="969" alt="image" src="https://github.com/user-attachments/assets/4c05075e-19a7-4d7b-a4ca-82e57542fb3f" />
 
 
