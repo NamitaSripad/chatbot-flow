@@ -1,7 +1,8 @@
 // Type-only imports
 import type { Node, Edge, Connection } from 'reactflow';
 
-// Runtime values
+// Runtime imports
+import React, { useCallback } from 'react';
 import {
   ReactFlow,
   ReactFlowProvider,
@@ -9,10 +10,8 @@ import {
   useNodesState,
   useEdgesState,
 } from 'reactflow';
-import React, { useCallback } from 'react';
+
 import TextNode from '../nodes/TextNode';
-
-
 
 const nodeTypes = { text: TextNode };
 
@@ -46,24 +45,35 @@ export default function FlowBuilder({
     [edgeList]
   );
 
-  const onDrop = (event: React.DragEvent) => {
+  const onDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     const type = event.dataTransfer.getData('application/reactflow');
     if (!type) return;
 
+    const position = {
+      x: event.clientX - 250,
+      y: event.clientY - 50,
+    };
+
     const newNode: Node = {
-      id: `${+new Date()}`,
+      id: `${Date.now()}`,
       type,
-      position: { x: event.clientX - 250, y: event.clientY - 50 },
+      position,
       data: { label: 'Text Message' },
     };
-    setNodeList((nds) => nds.concat(newNode));
-    setNodes((nds) => nds.concat(newNode));
+
+    setNodeList((prev) => [...prev, newNode]);
+    setNodes((prev) => [...prev, newNode]);
+  };
+
+  const onDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = 'move';
   };
 
   return (
     <ReactFlowProvider>
-      <div style={{ width: '100%', height: '100%' }} onDrop={onDrop} onDragOver={(e) => e.preventDefault()}>
+      <div style={{ width: '100%', height: '100%' }} onDrop={onDrop} onDragOver={onDragOver}>
         <ReactFlow
           nodes={nodeList}
           edges={edgeList}
