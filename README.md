@@ -1,5 +1,9 @@
 # 💬 Chatbot Flow Builder
 
+
+[![Vercel](https://vercelbadge.vercel.app/api/NamitaSripad/chatbot-flow)](https://chatbot-flow.vercel.app)
+[![GitHub Stars](https://img.shields.io/github/stars/NamitaSripad/chatbot-flow?style=social)](https://github.com/NamitaSripad/chatbot-flow/stargazers)
+
 A visual chatbot flow builder built using **React Flow** and **TypeScript**. This project allows users to create dynamic conversation flows through a no-code, drag-and-drop interface — ideal for building chatbot logic, customer support workflows, and interactive assistants.
 
 ---
